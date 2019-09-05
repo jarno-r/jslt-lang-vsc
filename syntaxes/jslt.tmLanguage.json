@@ -3,18 +3,66 @@
 	"name": "JSLT - JSON query and transformation language",
 	"patterns": [
 		{
-			"include": "#keywords"
+			"include":"#comments"
 		},
 		{
 			"include": "#strings"
+		},
+		{
+			"include": "#numbers"
+		},
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#variables"
 		}
 	],
 	"repository": {
+		"comments": {
+			"name": "comment.line.double-slash",
+			"begin": "//",
+			"end": "$"
+		},
+		"numbers" : {
+			"patterns": [
+				{
+					"name":"constant.numeric.jslt",
+					"match":"\\d+"
+				}
+			]
+		},
+		"variables": {
+			"patterns": [
+				{
+					"name":"variable.name.jslt",
+					"match": "(\\w|-)+(:(\\w|-)+)?"
+				},
+				{
+					"name":"variable.other.jslt",
+					"match": "\\$(\\w|-)+"
+				}
+			]
+		},
 		"keywords": {
-			"patterns": [{
-				"name": "keyword.control.jslt",
-				"match": "\\b(if|while|for|return)\\b"
-			}]
+			"patterns": [
+				{
+					"name": "keyword.control.jslt",
+					"match": "\\b(if|else|for|def|let)\\b"
+				},
+				{
+					"name": "keyword.control.import.jslt",
+					"match": "\\b(import|as)\\b"
+				},
+				{
+					"name": "keyword.operator.jslt",
+					"match": "(\\b(or|and)\\b)|=|!=|==|<|>|<=|>=|\\*|/|\\+|-"
+				},
+				{
+					"name": "keyword.other.jslt",
+					"match": "\\b(null|true|false)\\b"
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double.jslt",
@@ -23,7 +71,7 @@
 			"patterns": [
 				{
 					"name": "constant.character.escape.jslt",
-					"match": "\\\\."
+					"match": "\\\\\""
 				}
 			]
 		}
