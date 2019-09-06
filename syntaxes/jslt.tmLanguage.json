@@ -3,7 +3,7 @@
 	"name": "JSLT - JSON query and transformation language",
 	"patterns": [
 		{
-			"include":"#comments"
+			"include": "#comments"
 		},
 		{
 			"include": "#strings"
@@ -24,22 +24,22 @@
 			"begin": "//",
 			"end": "$"
 		},
-		"numbers" : {
+		"numbers": {
 			"patterns": [
 				{
 					"name":"constant.numeric.jslt",
-					"match":"\\d+"
+					"match":"-?\\d+(\\.\\d*)?((e|E)(\\+|-)?\\d+)?"
 				}
 			]
 		},
 		"variables": {
 			"patterns": [
 				{
-					"name":"variable.name.jslt",
+					"name": "entity.name.jslt",
 					"match": "(\\w|-)+(:(\\w|-)+)?"
 				},
 				{
-					"name":"variable.other.jslt",
+					"name": "variable.name.jslt",
 					"match": "\\$(\\w|-)+"
 				}
 			]
@@ -56,7 +56,7 @@
 				},
 				{
 					"name": "keyword.operator.jslt",
-					"match": "(\\b(or|and)\\b)|=|!=|==|<|>|<=|>=|\\*|/|\\+|-"
+					"match": "(\\b(or|and)\\b)|=|!=|==|<|>|<=|>=|\\*|/|\\+|-|:|\\."
 				},
 				{
 					"name": "keyword.other.jslt",
