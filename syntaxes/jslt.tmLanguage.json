@@ -35,11 +35,11 @@
 		"variables": {
 			"patterns": [
 				{
-					"name": "entity.name.jslt",
+					"name": "variable.name",
 					"match": "(\\w|-)+(:(\\w|-)+)?"
 				},
 				{
-					"name": "variable.name.jslt",
+					"name": "variable.other.jslt",
 					"match": "\\$(\\w|-)+"
 				}
 			]
