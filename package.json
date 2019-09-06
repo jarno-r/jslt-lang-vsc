@@ -1,25 +1,34 @@
 {
-    "name": "jslt-lang",
-    "displayName": "JSLT syntax highlighting",
-    "description": "Syntax highlighting for the JSLT JSON query and transformation language",
-    "version": "0.0.1",
-    "engines": {
-        "vscode": "^1.38.0"
-    },
-    "categories": [
-        "Programming Languages"
+  "name": "jslt-lang",
+  "displayName": "JSLT syntax highlighting",
+  "description": "Syntax highlighting for the JSLT JSON query and transformation language",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.38.0"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "contributes": {
+    "languages": [
+      {
+        "id": "jslt",
+        "aliases": [
+          "JSLT - JSON query and transformation language",
+          "jslt"
+        ],
+        "extensions": [
+          ".jslt"
+        ],
+        "configuration": "./language-configuration.json"
+      }
     ],
-    "contributes": {
-        "languages": [{
-            "id": "jslt",
-            "aliases": ["JSLT - JSON query and transformation language", "jslt"],
-            "extensions": [".jslt"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [{
-            "language": "jslt",
-            "scopeName": "source.jslt",
-            "path": "./syntaxes/jslt.tmLanguage.json"
-        }]
-    }
+    "grammars": [
+      {
+        "language": "jslt",
+        "scopeName": "source.jslt",
+        "path": "./syntaxes/jslt.tmLanguage.json"
+      }
+    ]
+  }
 }
